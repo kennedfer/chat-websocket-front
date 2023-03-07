@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.red {
+  background-color: red;
+}
+
+.bg-dark {
+  background-color: #282f3f;
+}
+
+.secondary {
+  color: #373e4e;
+}
+
+.bg-none {
+  background-color: transparent;
+}
+
+.bg-secondary {
+  background-color: #373e4e;
+}
+
+.message {
+  border-radius: 30px;
+  padding: 10px 20px;
+  word-break: break-word;
+}
+
+.p-fixed {
+  background-color: rebeccapurple;
+  position: fixed;
+}
+
+.user-message {
+  justify-content: end;
+}
+
+.absolute-center {
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.decorator-message div > div {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 95%;
+  color: rgb(217, 217, 217);
+}
+
+.input-container > input {
+  background-color: #373e4e;
+  text-align: center;
+  font-size: 150%;
+  height: 70%;
+  color: white;
+  align-self: center;
+}
+
+.input-name > input {
+  background-color: #373e4e;
+  text-align: center;
+  font-size: 150%;
+  height: 120%;
+  color: white;
+  align-self: center;
+}
+
+.input-name > button {
+  padding: 10px;
+  background-color: white;
+  font-weight: bold;
+  color: #575f71;
+  border-radius: 20px;
+}
+
+.no-resize {
+  resize: none;
+}
+
+.max-w-50 {
+  max-width: 50%;
+}
+
+.user-message > div > div {
+  background-color: #181c26;
+  text-align: right;
+}
+
+.text-secondary {
+  color: #575f71;
+}
+
+body {
+  background-color: #282f3f;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
