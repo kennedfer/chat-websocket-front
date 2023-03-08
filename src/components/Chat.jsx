@@ -1,5 +1,5 @@
 import { Message } from "./Message";
-import { useIsInvisible } from "../hooks/invisible-hook";
+import { useIsNotVisible } from "../hooks/invisible-hook";
 import { useEffect, useRef, useState } from "react";
 import { socket } from "../utils/socket.js";
 
@@ -7,7 +7,7 @@ export const Chat = () => {
   const [messages, setMessages] = useState([]);
 
   let bottomPlaceholder = useRef();
-  const placeholderIsVisible = useIsInvisible(bottomPlaceholder);
+  const placeholderIsVisible = useIsNotVisible(bottomPlaceholder);
 
   useEffect(() => socket.bindMessagesHook(setMessages), []);
 
@@ -26,19 +26,8 @@ export const Chat = () => {
         )}
       </div>
       <div className="w-full flex flex-col g-1 gap-y-1 absolute overflow-scroll">
-        {messages.map(({ userId, data }, i) => (
-          <Message
-            type={
-              userId == socket.getUserId()
-                ? "user"
-                : userId == "decorator"
-                ? "decorator"
-                : "group"
-            }
-            key={i}
-            message={data}
-            nick={userId}
-          />
+        {messages.map(({ userId, data, type }, i) => (
+          <Message type={type} key={i} message={data} />
         ))}
         <div ref={bottomPlaceholder}></div>
       </div>

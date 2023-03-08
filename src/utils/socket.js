@@ -21,7 +21,7 @@ const EVENTS = {
 };
 
 export const createSocket = (setRoomIdHook) => {
-  socket = new WebSocket("wss://kennedfer-chat-ws.onrender.com");
+  socket = new WebSocket("ws://localhost:3000");
   nick = storage.getUserFromLocalStorage();
 
   setAppRoomId = setRoomIdHook;
@@ -49,10 +49,10 @@ export const createSocket = (setRoomIdHook) => {
 
     if (messageUserId != lastUserId && messageUserId != userId) {
       lastUserId = messageUserId;
-      messages.push({ userId: "decorator", data: messageUserId });
+      messages.push({ type: "decorator", data: messageUserId });
     }
 
-    messages.push(message);
+    messages.push({ type: userId == messageUserId ? "user" : "group", data });
     setMessagesHook([...messages]);
   };
 };

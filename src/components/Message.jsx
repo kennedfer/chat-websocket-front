@@ -1,6 +1,6 @@
 import { socket } from "../utils/socket";
 
-export const Message = ({ nick, type, message }) => {
+export const Message = ({ type, message }) => {
   return (
     <div className={`flex ${type}-message`}>
       <div className="max-w-50">

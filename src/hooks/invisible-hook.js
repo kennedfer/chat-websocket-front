@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useIsInvisible = (ref) => {
+export const useIsNotVisible = (ref) => {
   const [isInvisible, setIsInvisible] = useState(true);
 
   useEffect(() => {
