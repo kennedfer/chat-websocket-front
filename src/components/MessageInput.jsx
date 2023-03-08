@@ -1,15 +1,15 @@
 import { useRef, useState } from "react";
 import { socket } from "../utils/socket";
 
-const _MAX_LINES_INPUT = 3;
-const _SCROLL_HEIGHT = 24;
+const MAX_LINES_INPUT = 3;
+const SCROLL_HEIGHT = 24;
 
 export const MessageInput = () => {
   const [message, setMessage] = useState();
   let textareaElement = useRef();
 
   function resetInputHeight() {
-    textareaElement.current.style.height = `${_SCROLL_HEIGHT}px`;
+    textareaElement.current.style.height = `${SCROLL_HEIGHT}px`;
   }
 
   function handleMessageInput(evt) {
@@ -18,7 +18,7 @@ export const MessageInput = () => {
 
     const { scrollHeight } = textareaElement.current;
 
-    const maxInputHeight = _MAX_LINES_INPUT * _SCROLL_HEIGHT;
+    const maxInputHeight = MAX_LINES_INPUT * SCROLL_HEIGHT;
 
     textareaElement.current.style.height = `${scrollHeight}px`;
 

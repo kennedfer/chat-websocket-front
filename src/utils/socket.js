@@ -21,7 +21,7 @@ const EVENTS = {
 };
 
 export const createSocket = (setRoomIdHook) => {
-  socket = new WebSocket("ws://localhost:3000");
+  socket = new WebSocket("wss://kennedfer-chat-ws.onrender.com");
   nick = storage.getUserFromLocalStorage();
 
   setAppRoomId = setRoomIdHook;
