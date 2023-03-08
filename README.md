@@ -73,7 +73,7 @@ Esse componente é bem simples, além de ser uma div com metade da largura total
 ## Alguns detalhes extras:
 - O chat é uma SPA mas sem muita engenharia por trás, os sistemas são todos baseados em renderização condicional
 - O "apelido" é salvo localmente então sim, dá pra ter mais de um "fulano" no chat o que vai diferenciar é o "#xxxx"
-  ficaria algom como "fulano#1234" e "fulano#4321"
+  ficaria algo como "fulano#1234" e "fulano#4321"
 - Usei `tailwindcss` para estilizar, já usava uma abordagem parecida nas classes e ele é bem mais abrangente
 - Usei `react-hot-toast` para as notificações de "sala não encontrada" e "conectando ao servidor..."
 - Esse projeto foi feito com esforço e é sim uma solução funcional, mas, novamente, não é muito robusto
