@@ -78,6 +78,7 @@ Esse componente é bem simples, além de ser uma div com metade da largura total
 - Usei `react-hot-toast` para as notificações de "sala não encontrada" e "conectando ao servidor..."
 - Esse projeto foi feito com esforço e é sim uma solução funcional, mas, novamente, não é muito robusto
   sendo melhor visto como um ponto inicial que ainda pode ser incrementado
-- 
+- E, claro, isso tudo foi só um resumo e vários pontos estão diferentes do codigo real
+  a ideia foi passada mas caso tenha algum trecho que 'passou batido' o código completo está disponivel
 
 
