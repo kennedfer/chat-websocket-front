@@ -51,6 +51,14 @@ Fazer isso tambem é simples usando o `IntersectionObserver`, eu inclusive fiz u
 pois, nesse caso em especifico, ficaria melhor escrito, algo como `if(!placeholderIsVisible())` para `if(placeholderIsNotVisible())`<br>
 O código é simples e nem tem muito o que ser dito, só olhar que dá pra "pegar" o conceito
 ![image](https://user-images.githubusercontent.com/74821126/223595349-88c5a7da-80cd-43c4-904e-b512fedff56b.png)
+<br>
+
+## Mensagens
+Esse componente é bem simples, além de ser uma div com metade da largura total do container cada pode ter um de três tipos diferentes:<br>
+- "decorator": É usado para "desenhar" o nome do dono da sequencia de mensagem, a lógica é básica, basta verificar se o dono da mensagem atual
+  é diferente do dono da ultima mensagem, se sim, adicione uma mensagem do tipo "decorator" com o conteúdo sendo o nome do usuário
+- "user": Tipo usado para marcar as mensagens como do usuario e, claro, estilizar de um jeito diferente
+- "group": Tipo default de estilo mas preferi manter ele nesse tipo para um melhor controle
 
 
 
