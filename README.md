@@ -13,7 +13,7 @@ Primeiro que eu queria um comportamento de "auto-seleção"<br>
 1 -> 2 -> 3 -> 4 -> 1...
 ```
 como existe o `Element.focus()` dos elementos Html fui nessa direção e, para acessar essa funcionalidade,<br>
-usei usar a hook `useRef` do React.<br>
+usei a hook `useRef` do React.<br>
 Portanto, tenho quatro referencias de elementos do tipo input e cada um com um único "id" de 0 a 3.<br>
 Para fazer a seleção automática basta então "focar", após o click, no "id" atual mais 1:
 ```js
@@ -36,8 +36,9 @@ Para isso, parti de um viés matemático onde:<br>
 Isso é possivel pois o input tem no máximo uma letra, logo, ou está preenchido ou não está.<br>
 Depois disso é só verificar se a variavel de controle é igual a 4 e, se sim, chamar `join()`<br>
 PS: Lembre se de verificar se os antigos valores e os novos são diferentes<br>
-`if(typed != "" && typeds[id] == "")` Adicione<br>
-`if(typed != "" && typeds[id] != "")` Não adicione<br>
+`if(typed != vazio && lastTyped == vazio)` Adicione<br>
+`if(typed != vazio && lastTyped == vazio)` Não adicione<br>
+isso faz com que, caso o user troque uma letra por outra, o código não adicione<br>
 Talvez pareça confuso mas com alguns testes voce vê que é preciso 
 <br>
 ![image](https://user-images.githubusercontent.com/74821126/223580028-819e5bc1-131d-40bc-87f9-fa8b6e948d5c.png)
@@ -47,7 +48,7 @@ Talvez pareça confuso mas com alguns testes voce vê que é preciso
 Sobre o FAB não tem muito segredo é basicamente deixar um placeholder embaixo do "chat" (das mensagens no caso)<br>
 e mostrar ele caso o usuario esteja vendo o placeholder, simples não?<br>
 Fazer isso tambem é simples usando o `IntersectionObserver`, eu inclusive fiz um hook dele mas com os valores inversos<br>
-pois, nesse caso em especifico, ficaria melhor escrito, algo como `if(!placeholderIsVisible())` para `if(placeholderIsInvisible())`<br>
+pois, nesse caso em especifico, ficaria melhor escrito, algo como `if(!placeholderIsVisible())` para `if(placeholderIsNotVisible())`<br>
 O código é simples e nem tem muito o que ser dito, só olhar que dá pra "pegar" o conceito
 ![image](https://user-images.githubusercontent.com/74821126/223595349-88c5a7da-80cd-43c4-904e-b512fedff56b.png)
 
