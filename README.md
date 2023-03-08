@@ -37,8 +37,8 @@ Isso é possivel pois o input tem no máximo uma letra, logo, ou está preenchid
 Depois disso é só verificar se a variavel de controle é igual a 4 e, se sim, chamar `join()`<br>
 PS: Lembre se de verificar se os antigos valores e os novos são diferentes<br>
 `if(typed != vazio && lastTyped == vazio)` Adicione<br>
-`if(typed != vazio && lastTyped == vazio)` Não adicione<br>
-isso faz com que, caso o user troque uma letra por outra, o código não adicione<br>
+`if(typed != vazio && lastTyped != vazio)` Não adicione<br>
+isso faz com que, caso o usuário troque uma letra por outra, o código não adicione mais um à variável.<br>
 Talvez pareça confuso mas com alguns testes voce vê que é preciso 
 <br>
 ![image](https://user-images.githubusercontent.com/74821126/223580028-819e5bc1-131d-40bc-87f9-fa8b6e948d5c.png)
@@ -53,12 +53,32 @@ O código é simples e nem tem muito o que ser dito, só olhar que dá pra "pega
 ![image](https://user-images.githubusercontent.com/74821126/223595349-88c5a7da-80cd-43c4-904e-b512fedff56b.png)
 <br>
 
+## Input de mensagem com crescimento automático
+Nesse aqui parti novamente pelo caminho das referências, de maneira resumida, o input é "setado" para a altura de uma linha<br>
+e a partir dai a nova altura dele é baseada na altura do scroll `inputRef.current.scrollHeight`<br> 
+com isso temos um input que cresce sem limites, então, para limitarmos ele à X linhas, basta calcular `X * altura de uma linha`<br>
+e verificar se a nova altura é maior, caso seja, basta "seta-la" ao valor de `X * altura de uma linha`
+![image](https://user-images.githubusercontent.com/74821126/223792136-50a18a26-655d-427a-b237-9274a2c8131b.png)
+<br>
+
 ## Mensagens
 Esse componente é bem simples, além de ser uma div com metade da largura total do container cada pode ter um de três tipos diferentes:<br>
 - "decorator": É usado para "desenhar" o nome do dono da sequencia de mensagem, a lógica é básica, basta verificar se o dono da mensagem atual
   é diferente do dono da ultima mensagem, se sim, adicione uma mensagem do tipo "decorator" com o conteúdo sendo o nome do usuário
 - "user": Tipo usado para marcar as mensagens como do usuario e, claro, estilizar de um jeito diferente
 - "group": Tipo default de estilo mas preferi manter ele nesse tipo para um melhor controle
+![image](https://user-images.githubusercontent.com/74821126/223790160-81b21eb7-d0ce-48de-ae1e-aefc9d6b8e62.png)
+<br>
 
+## Alguns detalhes extras:
+- O chat é uma SPA mas sem muita engenharia por trás, os sistemas são todos baseados em renderização condicional
+- O "apelido" é salvo localmente então sim, dá pra ter mais de um "fulano" no chat o que vai diferenciar é o "#xxxx"
+  ficaria algo como "fulano#1234" e "fulano#4321"
+- Usei `tailwindcss` para estilizar, já usava uma abordagem parecida nas classes e ele é bem mais abrangente
+- Usei `react-hot-toast` para as notificações de "sala não encontrada" e "conectando ao servidor..."
+- Esse projeto foi feito com esforço e é sim uma solução funcional, mas, novamente, não é muito robusto
+  sendo melhor visto como um ponto inicial que ainda pode ser incrementado
+- E, claro, isso tudo foi só um resumo e vários pontos estão diferentes do codigo real
+  a ideia foi passada mas caso tenha algum trecho que 'passou batido' o código completo está disponivel
 
 
