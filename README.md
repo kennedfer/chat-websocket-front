@@ -41,4 +41,15 @@ PS: Lembre se de verificar se os antigos valores e os novos são diferentes<br>
 Talvez pareça confuso mas com alguns testes voce vê que é preciso 
 <br>
 ![image](https://user-images.githubusercontent.com/74821126/223580028-819e5bc1-131d-40bc-87f9-fa8b6e948d5c.png)
+<br>
+
+## Floating Action Button
+Sobre o FAB não tem muito segredo é basicamente deixar um placeholder embaixo do "chat" (das mensagens no caso)<br>
+e mostrar ele caso o usuario esteja vendo o placeholder, simples não?<br>
+Fazer isso tambem é simples usando o `IntersectionObserver`, eu inclusive fiz um hook dele mas com os valores inversos<br>
+pois, nesse caso em especifico, ficaria melhor escrito, algo como `if(!placeholderIsVisible())` para `if(placeholderIsInvisible())`<br>
+O código é simples e nem tem muito o que ser dito, só olhar que dá pra "pegar" o conceito
+![image](https://user-images.githubusercontent.com/74821126/223595349-88c5a7da-80cd-43c4-904e-b512fedff56b.png)
+
+
 
