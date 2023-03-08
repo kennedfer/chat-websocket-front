@@ -34,6 +34,11 @@ Para isso, parti de um viés matemático onde:<br>
 - caso contrario subtraia um da mesma variável<br>
 
 Isso é possivel pois o input tem no máximo uma letra, logo, ou está preenchido ou não está.<br>
-Depois disso é só verificar se a variavel de controle é igual a 4 e, se sim, chamar `join()`
+Depois disso é só verificar se a variavel de controle é igual a 4 e, se sim, chamar `join()`<br>
+PS: Lembre se de verificar se os antigos valores e os novos são diferentes<br>
+`if(typed != "" && typeds[id] == "")` Adicione<br>
+`if(typed != "" && typeds[id] != "")` Não adicione<br>
+Talvez pareça confuso mas com alguns testes voce vê que é preciso 
+<br>
 ![image](https://user-images.githubusercontent.com/74821126/223580028-819e5bc1-131d-40bc-87f9-fa8b6e948d5c.png)
 
