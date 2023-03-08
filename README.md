@@ -37,8 +37,8 @@ Isso é possivel pois o input tem no máximo uma letra, logo, ou está preenchid
 Depois disso é só verificar se a variavel de controle é igual a 4 e, se sim, chamar `join()`<br>
 PS: Lembre se de verificar se os antigos valores e os novos são diferentes<br>
 `if(typed != vazio && lastTyped == vazio)` Adicione<br>
-`if(typed != vazio && lastTyped == vazio)` Não adicione<br>
-isso faz com que, caso o user troque uma letra por outra, o código não adicione<br>
+`if(typed != vazio && lastTyped != vazio)` Não adicione<br>
+isso faz com que, caso o usuário troque uma letra por outra, o código não adicione mais um à variável.<br>
 Talvez pareça confuso mas com alguns testes voce vê que é preciso 
 <br>
 ![image](https://user-images.githubusercontent.com/74821126/223580028-819e5bc1-131d-40bc-87f9-fa8b6e948d5c.png)
